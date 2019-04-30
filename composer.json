@@ -1,0 +1,21 @@
+{
+    "name": "alfiehd/markdown-documentation",
+    "description": "Generate documentation for the core project library in markdown format.",
+    "keywords": ["laravel", "markdown", "documentation", "vuepress"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alfie Hopkin",
+            "email": "alfiehopkindesigns@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AlfieHD\\MarkdownDocumentation\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "laravel/framework": "5.8.x"
+    }
+}
