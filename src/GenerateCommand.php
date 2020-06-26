@@ -46,11 +46,15 @@ class GenerateCommand extends Command
         $files = Storage::disk('app')->allFiles();
 
         foreach($files as $file)
-        {
-            // get class name using file
-            $class_name = '\\App\\' . str_replace('.php', '', str_replace('/', '\\', $file));
-            // get reflection class object
-            $class = new ReflectionClass($class_name);
+        {   
+            try {
+                // get class name using file
+                $class_name = '\\App\\' . str_replace('.php', '', str_replace('/', '\\', $file));
+                // get reflection class object
+                $class = new ReflectionClass($class_name);
+            } catch (\Exception $exception) {
+                continue;
+            }
 
             // get path to output markdown file to (follows namspace structure)
             $md_path = $this::getClassSlug($class->getName());
